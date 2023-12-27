@@ -1,0 +1,43 @@
+{{- $ThemeVersion := "3.17.0" -}}
+<footer class="site-footer">
+    <!-- #TODO 参考https://github.com/journey-ad/Moe-Counter使用并放在下面 -->
+
+    {{$scratch := newScratch}}
+{{ range (where .Site.Pages "Kind" "page" )}}
+    {{$scratch.Add "total" .WordCount}}
+{{ end }}
+
+    <section class="copyright">
+        &copy; 
+        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+            {{ .Site.Params.footer.since }} - 
+        {{ end }}
+        <!-- #TODO 修改 -->
+        {{ now.Format "2006" }} <a href="#这里是博客链接">博客标题</a>·<i class="fas fa-bell"></i> <a id="days">0</a>天<br>
+        <!-- {{$var :=  $scratch.Get "total"}}{{$var = div $var 100.0}}{{$var = math.Ceil $var}}{{$var = div $var 10.0}}共手书{{$var}}k字·共 {{ len (where .Site.RegularPages "Section" "post") }}篇文章</br><span><p> -->
+
+    </section>
+    
+    <section class="powerby">
+        {{ with .Site.Params.footer.customText }}
+            {{ . | safeHTML }} <br/>
+        {{ end }}
+
+        {{- $Generator := `<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>` -}}
+        {{- $Theme := printf `<b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="%s">Stack</a></b>` $ThemeVersion -}}
+        {{- $DesignedBy := `<a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
+
+        {{ T "footer.builtWith" (dict "Generator" $Generator) | safeHTML }} <br />
+        {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
+    </section>
+
+    <script>
+        // #TODO 下面修改建站时间
+        var s1 = '2018-04-15';//设置为建站时间
+        s1 = new Date(s1.replace(/-/g, "/"));
+        s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+        </script>
+</footer>

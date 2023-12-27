@@ -1,0 +1,72 @@
+toggleMenu:
+    other: 切换菜单
+
+darkMode:
+    other: 暗色模式
+
+article:
+    back:
+        other: 返回
+
+    tableOfContents:
+        other: 目录
+
+    relatedContent:
+        other: 还有这些文章：
+
+    lastUpdatedOn:
+        other: 最后更新于
+
+    readingTime:
+        other: "阅读时长: {{ .Count }} 分钟"
+
+notFound:
+    title:
+        other: 这里不可能会有文章！
+    subtitle:
+        other: 看看其他
+
+widget:
+    archives:
+        title:
+            other: 归档
+
+        more:
+            other: 更多
+
+    tagCloud:
+        title:
+            other: 标签云
+
+    categoriesCloud:
+        title:
+            other: 分类
+
+search:
+    title:
+        other: 搜索 博客 的一些内容
+
+    placeholder:
+        other: 输入搜索的关键词...
+
+    resultTitle:
+        other: "#PAGES_COUNT 个命中目标 （帮你找到这些用了 #TIME_SECONDS 秒）"
+
+footer:
+    builtWith:
+        other: Built with {{ .Generator }}
+
+    designedBy:
+        other: 主题 {{ .Theme }} 由 {{ .DesignedBy }} 设计，由 吕楪 改进😎
+
+warning:
+    other: 警告
+
+note:
+    other: 注释
+
+info:
+    other: 引言
+
+tip:
+    other: 小贴示

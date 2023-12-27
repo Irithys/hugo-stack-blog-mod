@@ -1,0 +1,14 @@
+{{- $context := .Context -}}
+{{- $limit := default 3 .Params.limit -}}
+<script src="./js/rss-parser.min.js"></script>
+<script src="./js/status.js"></script>
+<section class="widget timeline">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "mastodon" }}
+    </div>
+    <h2 class="widget-title section-title">动态</h2>
+    <div class="widget-timeline--list">
+        <div id="status">
+        </div>
+    </div>
+</section>

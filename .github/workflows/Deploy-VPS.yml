@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+## A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      #- name: Setup Hugo
+      #  uses: peaceiris/actions-hugo@v2
+
+      #- name: Build
+      #  run: hugo --minify
+      #TODO 下面属于自动化部署到服务器上的内容，如果不使用自己的服务器可不需要配置。
+      - name: Deploy to VPS
+        env:
+          RSYNC_PWD: ${{ secrets.RSYNC_PASSWORD }}
+        run: |
+          echo $RSYNC_PWD > rsync.pwd
+          sudo chmod 600 rsync.pwd
+          rsync -av --delete public/ ${{ secrets.RSYNC_USER }}@${{ secrets.RSYNC_IP }}::blog --password-file=rsync.pwd          

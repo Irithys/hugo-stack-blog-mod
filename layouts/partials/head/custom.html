@@ -1,0 +1,29 @@
+<style>
+    :root {
+        /* --article-font-family: "Noto Serif SC", var(--base-font-family); */
+		/* --article-font-family: "Long Cang", var(--base-font-family); */
+		/* --sys-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue";
+		--zh-font-family: "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei";
+
+		--base-font-family: "Lato", var(--sys-font-family), var(--zh-font-family);
+		--code-font-family: Menlo, Monaco, Consolas, "Courier New";
+
+		--article-font-family: var(--base-font-family); */
+		--sys-font-family: "HarmonyOS_Sans_SC_Medium", Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+
+		--code-font-family: "JetBrainsMono Regular", Menlo, Monaco, Consolas, "Courier New";
+		--article-font-family: "HarmonyOS_Sans_SC_Medium", var(--base-font-family);
+    }
+</style>
+
+<script>
+	// #TODO 推荐下载下来修改为自己的链接
+		(function () {
+		    const customFont = document.createElement('link');
+			customFont.href = "https://npm.elemecdn.com/irithys-cdn@1.0.4/font/font.css";
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- require APlayer -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"
+      /> -->
+      <link
+      rel="stylesheet"
+      href="https://npm.elemecdn.com/aplayer/dist/APlayer.min.css"
+      />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>-->
+    <!-- 修复目录问题后的JS -->
+    <script src="https://cdn.jsdelivr.net/gh/irithys/cdn/src/js/APlayer.min.js"></script>
+    <!-- require MetingJS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script> -->
+  </head>
+  <body>
+    <div id="aplayer"></div>
+    <script>
+      const ap = new APlayer({
+
+        container: document.getElementById("aplayer"),
+        fixed: true,
+        autoplay: false,
+        mini: true,
+        theme: "#f8f4fc",
+        loop: "all",
+        order: "random",
+        preload: "auto",
+        volume: 0.6,
+        mutex: true,
+        listFolded: false,
+        listMaxHeight: 90,
+        lrcType: 0,
+        music: [
+          // #TODO 音乐文件 推荐下载下来修改为自己的链接
+        {
+            name: "Dream",
+            url: "https://npm.elemecdn.com/irithys-cdn@1.0.4/music/Dream.mp3",
+            artists: "RABPIT",
+            cover:
+              "https://npm.elemecdn.com/irithys-cdn@1.0.4/music/cover/Dream.webp",
+          }
+        ]
+      });
+    </script>
+  </body>
+</html>

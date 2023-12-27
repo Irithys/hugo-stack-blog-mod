@@ -1,0 +1,276 @@
+baseurl: https://博客链接 #TODO 博客链接
+languageCode: zh-Hans
+#theme: hugo-theme-stack
+theme: hugo-theme-stack-3.17.0
+paginate: 10
+title: 博客标题 #TODO 博客标题
+
+languages:
+    zh-cn:
+        languageName: 中文
+        title: 标题 #TODO 博客标题
+        weight: 2
+
+# Change it to your Disqus shortname before using
+disqusShortname: hugo-theme-stack
+
+# GA Tracking ID
+googleAnalytics: #TODO Google分析
+#googleAnalytics:
+# Theme i18n support
+# Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk
+DefaultContentLanguage: zh-cn
+
+# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
+# This will make .Summary and .WordCount behave correctly for CJK languages.
+hasCJKLanguage: true
+
+permalinks:
+    post: /p/:slug/ #TODO 链接形式
+    page: /:slug/
+
+params:
+    mainSections:
+        - post
+    featuredImageField: image
+    rssFullContent: true
+    favicon: /img/favicon.ico
+
+    footer:
+        since: 2018 #TODO 这里是建站时间
+        customText:
+
+    dateFormat:
+        #published: Jan 02, 2006
+        #lastUpdated: Jan 02, 2006 15:04 MST
+        published: 01月02日, 2006年 
+        lastUpdated: 01月02日 15点04分, 2006年
+
+    sidebar:
+        emoji: 🤩
+        subtitle: 嘿，这里是副标题 #TODO 副标题
+        avatar:
+            enabled: true
+            local: true
+            src: /img/avatar.webp
+            #local: false #TODO 设置为true使用网络图片
+            #src: 
+
+    article:
+        math: false
+        toc: true
+        readingTime: true
+        license:
+            enabled: true
+            default: 版权标语 #TODO 版权标语
+
+    comments:
+        enabled: true
+        provider: waline
+
+        disqusjs:
+            shortname:
+            apiUrl:
+            apiKey:
+            admin:
+            adminLabel:
+
+        utterances:
+            repo: 
+            issueTerm: 
+            label: 
+
+        remark42:
+            host:
+            site:
+            locale:
+
+        vssue:
+            platform:
+            owner:
+            repo:
+            clientId:
+            clientSecret:
+            autoCreateIssue: false
+
+        # Waline client configuration see: https://waline.js.org/en/reference/client.html
+        waline:
+            serverURL: #TODO Waline 自行配置
+            lang:
+            visitor: true
+            pageview: true
+            dark: auto
+            emoji: #TODO 聊天使用的emoji
+                # - https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo
+                # - https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili@1.0.6
+            requiredMeta:
+                - name
+                - email
+                - url
+            locale:
+                admin: 博主 
+                placeholder: 有什么新点子？🎉（上方留下邮箱可以收到通知哦）
+
+        twikoo:
+            envId:
+            region:
+            path:
+            lang:
+
+        # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
+        cactus:
+            defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
+            serverName: "cactus.chat"
+            siteName: "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
+
+        giscus:
+            repo:
+            repoID:
+            category:
+            categoryID:
+            mapping:
+            lightTheme:
+            darkTheme:
+            reactionsEnabled: 1
+            emitMetadata: 0
+
+        gitalk:
+            owner: 
+            admin:  
+            repo: 
+            clientID: 
+            clientSecret: 
+        
+        cusdis:
+            host: 
+            id: 
+
+    widgets:
+        homepage:
+            - type: search
+            # - type: archives
+            #   params:
+            #       limit: 5
+            #- type: timeline
+            #  params:
+            #      limit: 10
+            - type: categories
+              params:
+                  limit: 10
+            - type: tag-cloud
+              params:
+                  limit: 100
+            
+            #- type: typeform-widget
+        page:
+            - type: search
+            - type: toc
+            - type: categories
+              params:
+                  limit: 10
+            #- type: typeform-widget
+
+    opengraph:
+        twitter:
+            # Your Twitter username
+            site:
+
+            # Available values: summary, summary_large_image
+            card: summary_large_image
+
+    defaultImage:
+        opengraph:
+            enabled: false
+            local: false
+            src:
+
+    colorScheme:
+        # Display toggle
+        toggle: true
+
+        # Available values: auto, light, dark
+        default: auto
+
+    imageProcessing:
+        cover:
+            enabled: true
+        content:
+            enabled: true
+
+### Custom menu
+### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
+### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
+menu:
+    main:
+        - identifier: home
+          name: 主页
+          url: /
+          weight: -100
+          params:
+              ### For demonstration purpose, the home link will be open in a new tab
+              newTab: false
+              icon: newspaper-regular
+        
+        # - identifier: travellings
+        #   name: 开往
+        #   url: https://travellings.link
+        #   weight: -50
+        #   params:
+        #       ### For demonstration purpose, the home link will be open in a new tab
+        #       newTab: true
+        #       icon: train-subway-solid
+
+        - identifier: 十年之约
+          name: 虫洞
+          url: https://foreverblog.cn/go.html
+          weight: -40
+          params:
+              ### For demonstration purpose, the home link will be open in a new tab
+              newTab: true
+              icon: record-vinyl-solid
+
+    #social:
+        #- identifier: github
+        #  name: GitHub
+        #  url: https://github.com/irithys #TODO 这里是你的Github链接
+        #  params:
+        #    icon: brand-github
+        
+        #- identifier: travellings
+        #  name: 开往
+        #  url: https://travellings.link
+        #  params:
+        #    icon: train-subway-solid
+        #    newTab: true
+            
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: true
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
+
+ignoreErrors: "error-remote-getjson"

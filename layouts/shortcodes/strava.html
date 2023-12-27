@@ -1,0 +1,11 @@
+{{ $data_id := .Get 0 | default "9188105854" }}
+{{ $width := .Get "width" | default "100%" }}
+{{ $height := .Get "height" | default "auto"}}
+
+{{ if eq ($data_id) "false" }}
+{{ else }}
+{{ end }}
+
+<div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="{{ $data_id }}" ></div><script src="https://strava-embeds.com/embed.js"></script>
+
+<!-- <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="9188105854"></div><script src="https://strava-embeds.com/embed.js"></script> -->
